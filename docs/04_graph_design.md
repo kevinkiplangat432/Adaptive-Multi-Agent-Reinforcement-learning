@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 # Graph Design
 
 ## Adaptive Multi-Agent Reinforcement Learning for AI Safety Monitoring Using Graph Neural Networks and Uncertainty Estimation

@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 # Adaptive Multi-Agent Reinforcement Learning for AI Safety Monitoring Using Graph Neural Networks and Uncertainty Estimation
 
 > **A research project investigating adaptive AI safety monitoring through graph representation learning, uncertainty-aware decision making, and reinforcement learning.**

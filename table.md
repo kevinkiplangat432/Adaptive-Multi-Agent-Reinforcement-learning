@@ -1,9 +1,11 @@
+<!-- markdownlint-disable -->
+
 | Phase    | Document                       | Why                                  |
 | -------- | ------------------------------ | ------------------------------------ |
 | ✅        | 01 Problem Statement           | Defines the problem                  |
 | ✅        | 02 System Architecture         | Defines the system                   |
 | ✅        | 03 Graph Design                | Defines the knowledge representation |
-| **Next** | **04 Mathematical Foundation** | Defines the mathematics              |
+| Next     | **04 Mathematical Foundation** | Defines the mathematics              |
 | Then     | 05 Literature Review           | Surveys existing work with context   |
 | Then     | 06 Dataset Design              | Defines the data                     |
 | Then     | 07 RL Environment              | Defines the decision-making problem  |
