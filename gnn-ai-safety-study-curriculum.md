@@ -1,3 +1,9 @@
+<!-- markdownlint-disable -->
+<p align="center">
+  <img src="LookMind.png" alt="LookMind" width="300" />
+</p>
+
+
 # Study Curriculum: Graph Neural Networks for AI Safety Monitoring
 
 This is the full landscape, listed flat, with nothing assumed as already covered. Work through it in this order.

@@ -1,4 +1,8 @@
 <!-- markdownlint-disable -->
+<p align="center">
+  <img src="LookMind.png" alt="LookMind" width="300" />
+</p>
+
 ## Open Research Directions — Graph Machine Learning for AI Safety Monitoring
 
 These are three genuinely open problems in the field we've been calling **Graph Machine Learning for AI Safety / Trustworthy AI Monitoring** (the intersection of Graph Neural Networks, Bayesian uncertainty estimation, and reinforcement learning applied to AI agent ecosystems). Each maps directly onto the ARVIS graph design and is still early enough for a focused contribution.
