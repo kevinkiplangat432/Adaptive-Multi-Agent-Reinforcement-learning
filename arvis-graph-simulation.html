@@ -88,6 +88,8 @@ const TYPES = {
   security_event: { color: '#ff5c5c', label: 'Security event' }
 };
 
+const ANCHOR_TYPES = new Set(['user', 'agent']); // never pruned
+
 const svg = d3.select('#svg');
 const width = () => window.innerWidth, height = () => window.innerHeight;
 
@@ -118,10 +120,14 @@ function addLink(source, target, alert) {
   links.push({ source: source.id, target: target.id, alert: !!alert });
 }
 
+// FIX: only prune ephemeral nodes — never remove the user/agent anchors,
+// since links keep referencing agent.id/user.id on every interaction.
 function pruneIfNeeded() {
   while (nodes.length > MAX_NODES) {
-    const removeId = nodes[0].id;
-    nodes.shift();
+    const idx = nodes.findIndex(n => !ANCHOR_TYPES.has(n.type));
+    if (idx === -1) break; // nothing safe left to prune
+    const removeId = nodes[idx].id;
+    nodes.splice(idx, 1);
     links = links.filter(l => (l.source.id ?? l.source) !== removeId && (l.target.id ?? l.target) !== removeId);
   }
 }
@@ -135,7 +141,7 @@ function restart() {
 }
 
 function render() {
-  const link = linkLayer.selectAll('line').data(links, d => (d.source.id ?? d.source) + '-' + (d.target.id ?? d.target) + Math.random());
+  const link = linkLayer.selectAll('line').data(links, d => (d.source.id ?? d.source) + '-' + (d.target.id ?? d.target));
   link.exit().remove();
   const linkEnter = link.enter().append('line')
     .attr('class', d => 'link flow' + (d.alert ? ' alert' : ''))
