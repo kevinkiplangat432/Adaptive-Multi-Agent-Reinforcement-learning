@@ -1,16 +1,20 @@
-# -*- coding: utf-8 -*-
+# numpy is an amazing tool but it cannot utilize Gpus to accelerate 
 import numpy as np
 import math
+import torch
+
+dtype = torch.float
+device = torch.device("cpu")
 
 # Create random input and output data
-x = np.linspace(-math.pi, math.pi, 2000)
-y = np.sin(x)
+x = torch.linspace(-torch.pi, torch.pi, 2000, device=device, dtype=dtype) 
+y = torch.sin(x)
 
 # Randomly initialize weights
-a = np.random.randn()
-b = np.random.randn()
-c = np.random.randn()
-d = np.random.randn()
+a = torch.randn((), device=device, dtype=dtype)
+b = torch.randn((), device=device, dtype=dtype)
+c = torch.randn((), device=device, dtype=dtype)
+d = torch.randn((), device=device, dtype=dtype)
 
 learning_rate = 1e-6
 for t in range(2000):
